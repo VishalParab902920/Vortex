@@ -7,10 +7,12 @@ public class Obstacle : MonoBehaviour
     Vector3 increment;
     [HideInInspector]
     public int decider;
+    public Rigidbody2D rigidBody;
 
     private void Start()
     {
         increment = new Vector3(0.001f, 0.001f, 0f);
+        rigidBody.rotation = Random.Range(0f, 360f);
         transform.localScale = Vector3.one * 0.0f;
         decider = Random.Range(1,3);
     }
@@ -31,4 +33,5 @@ public class Obstacle : MonoBehaviour
         if (this.transform.localScale.x > 4.0)
             Destroy(this.gameObject);
     }
+
 }

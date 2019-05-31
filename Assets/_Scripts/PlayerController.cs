@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     public float speed = 500f;
     float movement = 0f;
+    public Animator anim;
+    public GameManager gameManager;
 
     private void Update()
     {
@@ -12,5 +15,18 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         transform.RotateAround(Vector3.zero, Vector3.forward, movement * speed * Time.fixedDeltaTime);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Obstacle")
+        {
+            anim.SetTrigger("isDestroyed");
+            Destroy(this.gameObject, 2);
+            GameManager.score -= 1;
+            gameManager.GameOver();
+        }
+        if (collision.gameObject.tag == "Point")
+            GameManager.score += 1;
     }
 }
