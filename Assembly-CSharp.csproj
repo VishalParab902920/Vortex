@@ -60,10 +60,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\_Scripts\AudioManager.cs" />
     <Compile Include="Assets\_Scripts\BG_Tunnel.cs" />
+    <Compile Include="Assets\_Scripts\DonotDestroy.cs" />
     <Compile Include="Assets\_Scripts\GameManager.cs" />
+    <Compile Include="Assets\_Scripts\Menu.cs" />
     <Compile Include="Assets\_Scripts\Obstacle.cs" />
     <Compile Include="Assets\_Scripts\PlayerController.cs" />
+    <Compile Include="Assets\_Scripts\Sound.cs" />
     <Compile Include="Assets\_Scripts\Spawner.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>E:/Unity/Projects/Vortex/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

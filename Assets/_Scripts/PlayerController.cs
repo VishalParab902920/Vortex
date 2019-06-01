@@ -21,12 +21,16 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Obstacle")
         {
+            FindObjectOfType<AudioManager>().Play("Out");
             anim.SetTrigger("isDestroyed");
             Destroy(this.gameObject, 2);
             GameManager.score -= 1;
             gameManager.GameOver();
         }
         if (collision.gameObject.tag == "Point")
+        {
+            FindObjectOfType<AudioManager>().Play("Out");
             GameManager.score += 1;
+        }
     }
 }
