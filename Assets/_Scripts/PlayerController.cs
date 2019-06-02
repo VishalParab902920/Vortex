@@ -8,13 +8,21 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
     public GameManager gameManager;
 
+    float deltaX;
+    float xPos;
+
     private void Update()
     {
+        xPos = Input.GetAxis("Mouse X");
+        if (Input.touchCount > 0)
+        {
+            xPos = Input.touches[0].deltaPosition.x;
+        }
         movement = Input.GetAxisRaw("Horizontal");
     }
     private void FixedUpdate()
     {
-        transform.RotateAround(Vector3.zero, Vector3.forward, movement * speed * Time.fixedDeltaTime);
+        transform.RotateAround(Vector3.zero, Vector3.forward, xPos * speed * Time.fixedDeltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
