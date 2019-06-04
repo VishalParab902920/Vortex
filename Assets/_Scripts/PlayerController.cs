@@ -6,11 +6,14 @@ public class PlayerController : MonoBehaviour
     public float speed = 500f;
     float movement = 0f;
     public Animator anim;
-    public GameManager gameManager;
+    GameManager gameManager;
 
-    float deltaX;
     float xPos;
 
+    private void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
     private void Update()
     {
         xPos = Input.GetAxis("Mouse X");

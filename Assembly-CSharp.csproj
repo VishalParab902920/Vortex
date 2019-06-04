@@ -67,6 +67,7 @@
     <Compile Include="Assets\_Scripts\Menu.cs" />
     <Compile Include="Assets\_Scripts\Obstacle.cs" />
     <Compile Include="Assets\_Scripts\PlayerController.cs" />
+    <Compile Include="Assets\_Scripts\Shop.cs" />
     <Compile Include="Assets\_Scripts\Sound.cs" />
     <Compile Include="Assets\_Scripts\Spawner.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">

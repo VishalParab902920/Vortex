@@ -5,14 +5,20 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject[] Balls;
+
     public GameObject GameOverUI;
     public Text scoreText;
     public Text highScoreText;
 
     public static int score;
+    int ballToUse;
 
     private void Start()
     {
+        ballToUse = PlayerPrefs.GetInt("BallToUse");
+        Instantiate(Balls[ballToUse]);
+
         score = 0;
         highScoreText.text= PlayerPrefs.GetFloat("HighScore", 0).ToString();
     }
